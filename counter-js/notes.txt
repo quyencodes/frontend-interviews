@@ -1,0 +1,19 @@
+Instructions:
+
+1. Create a counter
+- Display a counter defaulted at 0 on the page
+- Button that increases the count displayed on the page
+
+2. Fetch data from an API and display the JSON data
+- Fetch the data from the API: https://randomuser.me/api
+- On page render, we want to display the JSON data we requested on the page
+
+3. From the data from the API
+- Display the user's picture and name
+
+4. Create a button that will allow the user to display more users on the page
+- Fetch the data from the API: https://randomuser.me/api?page=0
+- The query parameter ?page=N, assume that N goes to infinity
+- Create a button such that when the user clicks the button, it will make a request for an additional user and render that user on the page
+
+5. Bonus - fix linting error in useEffect hook
