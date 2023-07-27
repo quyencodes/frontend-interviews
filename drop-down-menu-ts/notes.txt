@@ -1,0 +1,8 @@
+Instructions:
+1. Create a drop-down menu with a <select> element
+- Prompt the user to select a number
+- Log to the console what the user selects everytime they change options
+- Log to the console what the user submits as their choice
+
+2. Create an advanced drop-down menu without the <select> element
+- Suggestions: use a <li> element or a <div>

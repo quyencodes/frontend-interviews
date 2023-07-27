@@ -16,7 +16,7 @@ export default function Home() {
       .get(`https://randomuser.me/api?page=${pageNumber}`)
       .then(({ data: { results } }) => {
         console.log(results)
-        // setRandomUserDataJSON(JSON.stringify(results, undefined, 2))
+        setRandomUserDataJSON(JSON.stringify(results, undefined, 2))
         setUserProfiles([...userProfiles, ...results])
       })
       .catch((err) => console.log(err))
@@ -35,13 +35,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="h-screen w-full font-bodyFont">
-        <RandomUser
+        {/* <RandomUser
           userProfiles={userProfiles}
           fetchRandomUserData={fetchRandomUserData}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           setUserProfiles={setUserProfiles}
-        />
+        /> */}
+        <pre>{randomUserDataJSON}</pre>
         <Counter />
       </main>
     </>
