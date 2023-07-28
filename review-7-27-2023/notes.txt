@@ -1,0 +1,51 @@
+What is React?
+React - JavaScript library made to build UI components
+- React is a frontend open source JS library, user-interfaces, advantagous for single-page application
+
+Pros:
+- Really big community -> libraries -> a lot of people to help online (stack overflow)
+- Functional components and class-based components
+- Virtual DOM, don't need to rerender entire page just the individual component
+
+Cons:
+- Angular vs. React
+- Learning curve
+- Not a full-blown framework might need to import other things
+
+What are hooks?
+- Hooks are functions that allow your component to be reusable
+- Examples: useState, useEffect, useRef, useCallback
+
+What is the useState hook?
+- initialize a variable to store our value, "setter" in order to change that value
+- setter(direct value), setter((prev)=>logic(prev))
+- re-render component if state is changed
+- hook is 'stateful'
+
+What is DOM?
+- Document Object Model
+- Document elements are objects
+- Actual definition: cross-platform and language independent interface that treats html and xml in a tree structure
+
+Virtual DOM?
+- How react works -> how it is able to rerender components it uses the virtual DOM. Virtual - virtual machines, environments, etc. "Simulated", React simulates a DOM structure. React on the backend generates a virtual DOM which a simulated version of the DOM, and it compares and replaces only that part of the code.
+
+What is state in React?
+- State of a component an object that holds some information that changes over the lifetime of the component
+
+What are props in React?
+- Props are inputs to components. Unidirectional.
+
+useState(value) why shouldn't I update the value directly
+- Component won't re-render if we manually update value
+
+One way data binding:
+- Props are unidirectional, parent -> child components.
+
+Questions to Ask:
+- asking about their work (how long are their sprints)
+- general advice question
+- hows mentorship / team culture at the company
+- technologies they've been working with
+- ask about their backgrounds
+- on-call rotation
