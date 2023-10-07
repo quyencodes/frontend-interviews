@@ -1,8 +1,7 @@
 export interface TaskType {
-    val: string;
-    completed: boolean;
+  uid: number
+  val: string
+  completed: boolean
 }
 
-export interface Temp {
-    
-}
+export interface Temp {}

@@ -1,6 +1,6 @@
 // npm imports
-import react, {useState} from 'react';
-import {TaskType} from '@utils/types';
+import react, { useState, useRef } from 'react'
+import { TaskType } from '@utils/types'
 
 // local imports
 import AddItem from '@components/AddItem'
@@ -11,20 +11,27 @@ import Head from 'next/head'
 
 export default function Home() {
   const [tasks, setTasks] = useState<TaskType[]>([])
+  const uid = useRef(0)
 
   const addTask = (task: TaskType) => {
-    setTasks([...tasks, {val: task, completed: false}])
+    console.log('addTasks fired')
+    setTasks([...tasks, { uid: uid.current, val: task, completed: false }])
+    uid.current++
   }
 
-  const deleteTask = () => {
-  }
-
-  const updateTask = (taskQuery: string) => {
-    console.log(`attempting to change task to completed`)
+  const deleteTask = (id: number) => {
     const temp = [...tasks]
+    const res = temp.filter((ele) => ele.uid != id)
+    setTasks(res)
+  }
+
+  const updateTask = (id: number) => {
+    const temp = [...tasks]
+    const index = temp.findIndex((ele) => ele.uid === id)
+    console.log(index)
+    temp[index].completed = true
     console.log(temp)
-    const query = temp.find((ele) => ele.val === taskQuery)
-    console.log(query)
+    setTasks(temp)
   }
 
   return (
@@ -36,8 +43,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="font-bodyFont">
-        <AddItem addTask={addTask}/>
-        <ItemList data={tasks} updateTask={updateTask}/>
+        <AddItem addTask={addTask} />
+        <ItemList
+          data={tasks}
+          updateTask={updateTask}
+          deleteTask={deleteTask}
+        />
       </main>
     </>
   )
