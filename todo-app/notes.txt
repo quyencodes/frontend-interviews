@@ -1,0 +1,1 @@
+Sometimes TailwindCSS does not work (especially v3): https://stackoverflow.com/questions/70577297/tailwind-class-is-not-working-after-installed
